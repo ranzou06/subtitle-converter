@@ -81,7 +81,7 @@ public class SsaImportHandler implements SubtitleImportHandler {
     }
 
     private int parseTime(String rawTime) {
-        Matcher matcher = timePattern.matcher(rawTime);
+        Matcher matcher = timePattern.matcher(rawTime.trim());
         if (!matcher.matches()) {
             throw new FileImportException(String.format("Time does not match expected format: %s", rawTime));
         }
